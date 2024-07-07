@@ -1,0 +1,58 @@
+{
+  "name": "next-project-template",
+  "version": "0.1.0",
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{json,yml,mjs,js,jsx,ts,tsx,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "build": "prettier --check . && npm run lint && next build",
+    "dev": "next dev",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint '**/*.{css,scss}'",
+    "lint:js": "eslint --ignore-pattern .gitignore",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.6.0",
+    "@next/eslint-plugin-next": "^14.2.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^9.6.0",
+    "eslint-config-next": "14.2.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8.1.9",
+    "postcss-import": "12.0.1",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.3.2",
+    "sass": "^1.77.6",
+    "stylelint": "^16.6.1",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-declaration-strict-value": "^1.10.4",
+    "stylelint-order": "^6.0.4",
+    "typescript": "^5"
+  }
+}

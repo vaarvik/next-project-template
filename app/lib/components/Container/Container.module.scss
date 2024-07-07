@@ -1,0 +1,30 @@
+@import '../../../assets/scss/variables';
+
+.container {
+  margin: 0 auto;
+  max-width: $content-width-md;
+
+  &--xs {
+    max-width: $content-width-xs;
+  }
+
+  &--sm {
+    max-width: $content-width-sm;
+  }
+
+  &--md {
+    max-width: $content-width-md;
+  }
+
+  &--lg {
+    max-width: $content-width-lg;
+  }
+
+  &--xl {
+    max-width: $content-width-xl;
+  }
+
+  &--full {
+    max-width: none;
+  }
+}

@@ -1,0 +1,59 @@
+/**
+* Theme colors:
+* * Current: https://huemint.com/website-3/#palette=ffffff-f7e1d1-26065b-182764-3a2637-38b8e2
+* * Alt: https://huemint.com/website-3/#palette=ffffff-2928fd-34075d-2a06a2-685d5c-f75b03
+* * Alt: https://huemint.com/website-3/#palette=ffffff-fcf0cb-1b1314-253336-d12127-285176
+*/
+
+/* Colors */
+$color-foreground: #26065b;
+$color-background: #fff;
+
+$color-primary: #182764;
+$color-secondary: #3a2637;
+$color-tertiary: #38b8e2;
+$color-quaternary: #f7e1d1;
+
+$color-neutral-lightest: #e5e5e5;
+$color-neutral-lighter: #c4b4d3;
+$color-neutral-default: #9382ad;
+$color-neutral-darker: #605187;
+$color-neutral-darkest: #2f2062;
+
+$color-success: #28a745;
+$color-warning: #ffc107;
+$color-error: #dc3545;
+
+/* Content Widths */
+$content-width-xs: 300px;
+$content-width-sm: 600px;
+$content-width-md: 900px;
+$content-width-lg: 1200px;
+$content-width-xl: 1500px;
+
+/* Text Properties */
+$font-family-base: 'Arial, sans-serif'; /* Fetched from Google and added as class by Next in `layout.tsx` */
+$font-family-heading: 'Helvetica, sans-serif';
+$font-mono: ui-monospace, menlo, monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+$font-size-sm: 0.875rem; /* 14px */
+$font-size-base: 16px;
+$font-size-lg: 1.25rem; /* 20px */
+$font-size-xl: 1.5rem; /* 24px */
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-loose: 1.75;
+
+/* Spacing Properties */
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
