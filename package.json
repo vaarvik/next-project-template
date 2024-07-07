@@ -25,12 +25,13 @@
     "dev": "next dev",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
+    "husky:check": "bash .husky/pre-commit",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:js": "eslint --ignore-pattern .gitignore",
-    "lint-staged": "lint-staged",
-    "start": "next start",
-    "prepare": "husky"
+    "lint:staged": "lint-staged",
+    "prepare": "husky",
+    "start": "next start"
   },
   "dependencies": {
     "next": "14.2.4",
