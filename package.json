@@ -28,7 +28,9 @@
     "husky:check": "bash .husky/pre-commit",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint '**/*.{css,scss}'",
-    "lint:js": "eslint --ignore-pattern .gitignore",
+    "lint:css:fix": "stylelint --fix '**/*.{css,scss}'",
+    "lint:js": "eslint",
+    "lint:js:fix": "eslint --fix",
     "lint:staged": "lint-staged",
     "prepare": "husky",
     "start": "next start"
