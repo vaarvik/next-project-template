@@ -20,7 +20,8 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:js": "eslint --ignore-pattern .gitignore",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.2.4",
