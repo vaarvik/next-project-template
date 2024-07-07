@@ -27,7 +27,7 @@ const settings = [
       'no-case-declarations': 'error',
       'no-empty': 'off',
       'no-unneeded-ternary': 'error',
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'error',
       'react/jsx-boolean-value': 'error',
       'react/jsx-curly-brace-presence': [
         'error',

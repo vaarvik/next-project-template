@@ -8,7 +8,15 @@
     }
   },
   "lint-staged": {
-    "**/*.{json,yml,mjs,js,jsx,ts,tsx,css,scss,md}": [
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
       "prettier --write"
     ]
   },
@@ -20,6 +28,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:js": "eslint --ignore-pattern .gitignore",
+    "lint-staged": "lint-staged",
     "start": "next start",
     "prepare": "husky"
   },
