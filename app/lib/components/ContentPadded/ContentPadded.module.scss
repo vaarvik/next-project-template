@@ -1,35 +1,35 @@
 @import '../../../assets/scss/variables';
 
 .content-padded {
+  padding: $space-md;
+
+  &--xs {
+    padding: $space-xs;
+  }
+
+  &--sm {
+    padding: $space-sm;
+  }
+
+  &--md {
     padding: $space-md;
+  }
 
-    &--xs {
-        padding: $space-xs;
-    }
+  &--lg {
+    padding: $space-lg;
+  }
 
-    &--sm {
-        padding: $space-sm;
-    }
+  &--xl {
+    padding: $space-xl;
+  }
 
-    &--md {
-        padding: $space-md;
-    }
+  &--ignore-x {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    &--lg {
-        padding: $space-lg;
-    }
-
-    &--xl {
-        padding: $space-xl;
-    }
-
-    &--ignore-x {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    &--ignore-y {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
+  &--ignore-y {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }
