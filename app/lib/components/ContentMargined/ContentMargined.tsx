@@ -15,7 +15,7 @@ export default function ContentMargined({
   ignoreY = false,
   children,
   ...otherProps
-}: Props) {
+}: Props): JSX.Element {
   const classNames = [
     styles['content-margined'],
     size ? styles[`content-margined--${size}`] : '',

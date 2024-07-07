@@ -11,7 +11,7 @@ export default function Container({
   width = 'md',
   children,
   ...otherProps
-}: Props) {
+}: Props): JSX.Element {
   const classNames = [
     styles['container'],
     width ? styles[`container--${width}`] : '',

@@ -15,7 +15,7 @@ export default function ContentPadded({
   ignoreY = false,
   children,
   ...otherProps
-}: Props) {
+}: Props): JSX.Element {
   const classNames = [
     styles['content-padded'],
     size ? styles[`content-padded--${size}`] : '',

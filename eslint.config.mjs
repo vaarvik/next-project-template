@@ -18,6 +18,7 @@ const settings = [
         },
       ],
       '@typescript-eslint/ban-types': 'error',
+      '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
