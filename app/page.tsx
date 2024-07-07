@@ -1,3 +1,7 @@
 export default function Home(): JSX.Element {
-  return <main></main>;
+  return (
+    <main>
+      <h1 role="heading">Home</h1>
+    </main>
+  );
 }
