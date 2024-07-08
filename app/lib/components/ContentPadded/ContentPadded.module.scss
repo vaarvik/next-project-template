@@ -1,8 +1,6 @@
 @import 'app/lib/assets/scss/variables';
 
 .content-padded {
-  padding: $space-md;
-
   @each $size, $value in $space-sizes {
     &--#{$size} {
       padding: $value;
