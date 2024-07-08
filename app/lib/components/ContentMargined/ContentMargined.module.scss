@@ -17,5 +17,21 @@
       margin-bottom: $value;
       margin-top: $value;
     }
+
+    &--left-#{$size} {
+      margin-left: $value;
+    }
+
+    &--right-#{$size} {
+      margin-right: $value;
+    }
+
+    &--bottom-#{$size} {
+      margin-bottom: $value;
+    }
+
+    &--top-#{$size} {
+      margin-top: $value;
+    }
   }
 }

@@ -1,11 +1,13 @@
-import { SpacingSizes } from '@/types/spacing';
+import { SPACING_DIRECTIONS } from '@/constants';
+import { SpacingVariant } from '@/types/spacing';
 import { ElementType, HTMLAttributes } from 'react';
 import styles from './ContentMargined.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
-  margin?: SpacingSizes | { x?: SpacingSizes; y?: SpacingSizes };
+  margin?: SpacingVariant;
 }
+const classNames = [styles['content-margined']];
 
 export default function ContentMargined({
   as: HTMLTag = 'div',
@@ -13,13 +15,17 @@ export default function ContentMargined({
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [styles['content-margined']];
-
   if (typeof margin === 'string') {
     classNames.push(styles[`content-margined--${margin}`]);
   } else {
-    if (margin?.x) classNames.push(styles[`content-margined--x-${margin.x}`]);
-    if (margin?.y) classNames.push(styles[`content-margined--y-${margin.y}`]);
+    SPACING_DIRECTIONS.forEach(direction => {
+      const spacingSize = margin[direction];
+      if (spacingSize) {
+        classNames.push(
+          styles[`content-margined--${direction}-${spacingSize}`],
+        );
+      }
+    });
   }
 
   return (
