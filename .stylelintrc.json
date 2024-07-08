@@ -16,7 +16,7 @@
       {
         "disableFix": true,
         "expandShorthand": true,
-        "ignoreValues": ["currentColor", "inherit", "transparent"]
+        "ignoreValues": ["currentcolor", "inherit", "transparent"]
       }
     ],
     "selector-class-pattern": null
