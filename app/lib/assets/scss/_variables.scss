@@ -57,3 +57,12 @@ $space-sm: 0.5rem;
 $space-md: 1rem;
 $space-lg: 2rem;
 $space-xl: 4rem;
+
+$space-sizes: (
+  none: 0,
+  xs: $space-xs,
+  sm: $space-sm,
+  md: $space-md,
+  lg: $space-lg,
+  xl: $space-xl,
+);

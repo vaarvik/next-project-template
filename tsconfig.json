@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "isolatedModules": true,
     "incremental": true,
@@ -12,6 +13,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
+      "@/assets/*": ["app/lib/assets/*"],
+      "@/components/*": ["app/lib/components/*"],
+      "@/services/*": ["app/lib/services/*"],
+      "@/types/*": ["app/lib/types/*"],
       "@/*": ["./*"]
     },
     "plugins": [

@@ -1,35 +1,19 @@
-@import '../../assets/scss/variables';
+@import 'app/lib/assets/scss/variables';
 
 .content-margined {
-  margin: $space-md;
+  @each $size, $value in $space-sizes {
+    &--#{$size} {
+      margin: $value;
+    }
 
-  &--xs {
-    margin: $space-xs;
-  }
+    &--x-#{$size} {
+      margin-left: $value;
+      margin-right: $value;
+    }
 
-  &--sm {
-    margin: $space-sm;
-  }
-
-  &--md {
-    margin: $space-md;
-  }
-
-  &--lg {
-    margin: $space-lg;
-  }
-
-  &--xl {
-    margin: $space-xl;
-  }
-
-  &--ignore-x {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  &--ignore-y {
-    margin-bottom: 0;
-    margin-top: 0;
+    &--y-#{$size} {
+      margin-bottom: $value;
+      margin-top: $value;
+    }
   }
 }

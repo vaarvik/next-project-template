@@ -1,30 +1,29 @@
+import { SpacingSizes } from '@/types/spacing';
 import { ElementType, HTMLAttributes } from 'react';
 import styles from './ContentMargined.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  ignoreX?: boolean;
-  ignoreY?: boolean;
+  margin?: SpacingSizes | { x?: SpacingSizes; y?: SpacingSizes };
 }
 
 export default function ContentMargined({
   as: HTMLTag = 'div',
-  size = 'md',
-  ignoreX = false,
-  ignoreY = false,
+  margin = 'md',
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [
-    styles['content-margined'],
-    size ? styles[`content-margined--${size}`] : '',
-    ignoreX ? styles['content-margined--ignore-x'] : '',
-    ignoreY ? styles['content-margined--ignore-y'] : '',
-  ].join(' ');
+  const classNames = [styles['content-margined']];
+
+  if (typeof margin === 'string') {
+    classNames.push(styles[`content-margined--${margin}`]);
+  } else {
+    if (margin?.x) classNames.push(styles[`content-margined--x-${margin.x}`]);
+    if (margin?.y) classNames.push(styles[`content-margined--y-${margin.y}`]);
+  }
 
   return (
-    <HTMLTag className={classNames} {...otherProps}>
+    <HTMLTag className={classNames.join(' ')} {...otherProps}>
       {children}
     </HTMLTag>
   );
