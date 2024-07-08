@@ -1,6 +1,8 @@
 @import 'app/lib/assets/scss/variables';
 
 .content-margined {
+  margin: $space-md;
+
   @each $size, $value in $space-sizes {
     &--#{$size} {
       margin: $value;
