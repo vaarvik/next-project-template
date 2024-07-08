@@ -7,7 +7,6 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
   margin?: SpacingVariant;
 }
-const classNames = [styles['content-margined']];
 
 export default function ContentMargined({
   as: HTMLTag = 'div',
@@ -15,6 +14,8 @@ export default function ContentMargined({
   children,
   ...otherProps
 }: Props): JSX.Element {
+  const classNames = [styles['content-margined']];
+
   if (typeof margin === 'string') {
     classNames.push(styles[`content-margined--${margin}`]);
   } else {

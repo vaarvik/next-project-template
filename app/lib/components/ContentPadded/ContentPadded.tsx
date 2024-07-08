@@ -8,14 +8,14 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   padding?: SpacingVariant;
 }
 
-const classNames = [styles['content-padded']];
-
 export default function ContentPadded({
   as: HTMLTag = 'div',
   padding = 'md',
   children,
   ...otherProps
 }: Props): JSX.Element {
+  const classNames = [styles['content-padded']];
+
   if (typeof padding === 'string') {
     classNames.push(styles[`content-padded--${padding}`]);
   } else {
