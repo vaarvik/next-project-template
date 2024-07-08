@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'app/lib/assets/scss/variables';
 
 * {
   border: 0;
@@ -18,9 +18,7 @@
 }
 
 html {
-  font-size: $font-size-base;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 a {

@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'app/lib/assets/scss/variables';
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -12,10 +12,14 @@
 }
 
 /* Base CSS */
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
