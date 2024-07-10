@@ -9,7 +9,14 @@ const settings = [
   ...fixupConfigRules(flatCompat.extends('next/core-web-vitals', 'prettier')),
   {
     files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['node_modules/*', '.yarn/*', 'build/**/*', 'dist/**/*'],
+    ignores: [
+      '.next/**/*',
+      'node_modules/**/*',
+      '.yarn/**/*',
+      'build/**/*',
+      'dist/**/*',
+      '.husky/**/*',
+    ],
     rules: {
       '@typescript-eslint/ban-ts-comment': [
         'warn',
@@ -26,6 +33,7 @@ const settings = [
       '@typescript-eslint/no-unused-expressions': 'warn',
       '@typescript-eslint/no-var-requires': 'warn',
       'max-depth': ['warn', 3],
+      'max-lines': ['warn', 150],
       'no-case-declarations': 'error',
       'no-empty': 'off',
       'no-unneeded-ternary': 'error',
@@ -48,4 +56,19 @@ const settings = [
   },
 ];
 
-export default settings;
+// Important top level ignores to override other ignores by plugins
+const settingsWithIgnores = [
+  {
+    ignores: [
+      '.next/**/*',
+      'node_modules/**/*',
+      '.yarn/**/*',
+      'build/**/*',
+      'dist/**/*',
+      '.husky/**/*',
+    ],
+  },
+  ...settings,
+];
+
+export default settingsWithIgnores;
