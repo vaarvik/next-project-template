@@ -25,6 +25,7 @@ const settings = [
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
       '@typescript-eslint/no-unused-expressions': 'warn',
       '@typescript-eslint/no-var-requires': 'warn',
+      'max-depth': ['warn', 3],
       'no-case-declarations': 'error',
       'no-empty': 'off',
       'no-unneeded-ternary': 'error',
