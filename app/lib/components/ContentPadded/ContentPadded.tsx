@@ -14,8 +14,7 @@ export default function ContentPadded({
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [styles['content-padded']];
-
+  const classNames = [];
   if (typeof padding === 'string') {
     classNames.push(styles[`content-padded--${padding}`]);
   } else {

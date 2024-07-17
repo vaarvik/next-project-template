@@ -14,7 +14,7 @@ export default function ContentMargined({
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [styles['content-margined']];
+  const classNames = [];
 
   if (typeof margin === 'string') {
     classNames.push(styles[`content-margined--${margin}`]);
