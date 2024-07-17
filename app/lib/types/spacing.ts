@@ -1,4 +1,4 @@
-export type SpacingSizes = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type SpacingSizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export type SpacingDirections = 'x' | 'y' | 'top' | 'right' | 'bottom' | 'left';
 
