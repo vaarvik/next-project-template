@@ -15,7 +15,7 @@
     "*.{css,scss,less}": [
       "stylelint --fix",
       "prettier --write",
-      "sh -c 'for file in \"$@\"; do typed-scss-modules \"$file\"; git add \"${file}.d.ts\"; done' sh"
+      "sh -c 'for file in \"$@\"; do if [[ \"$file\" == *.module.scss ]]; then typed-scss-modules \"$file\"; git add \"${file}.d.ts\"; fi; done' sh"
     ],
     "*.{json,md}": [
       "prettier --write"

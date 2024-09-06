@@ -12,6 +12,12 @@
       "options": {
         "printWidth": 120
       }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 120
+      }
     }
   ],
   "printWidth": 80,
