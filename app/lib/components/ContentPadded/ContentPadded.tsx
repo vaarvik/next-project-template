@@ -15,6 +15,7 @@ export default function ContentPadded({
   ...otherProps
 }: Props): ReactNode {
   const classNames = [];
+
   if (typeof padding === 'string') {
     classNames.push(styles[`content-padded--${padding}`]);
   } else {

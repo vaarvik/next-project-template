@@ -3,6 +3,7 @@ import styles from './Container.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
+  viewportHeight?: boolean;
   width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
 
@@ -12,13 +13,12 @@ export default function Container({
   children,
   ...otherProps
 }: Props): ReactNode {
-  const classNames = [
-    styles['container'],
-    width ? styles[`container--${width}`] : '',
-  ].join(' ');
+  const classNames = [styles['container']];
+
+  if (width) classNames.push(styles[`container--${width}`]);
 
   return (
-    <HTMLTag className={classNames} {...otherProps}>
+    <HTMLTag className={classNames.join(' ')} {...otherProps}>
       {children}
     </HTMLTag>
   );

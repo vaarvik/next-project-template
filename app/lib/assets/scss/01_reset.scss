@@ -36,6 +36,13 @@ button {
   overflow: visible;
 }
 
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 input {
   vertical-align: middle;
 }
