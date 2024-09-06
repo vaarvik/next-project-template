@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { ReactNode } from 'react';
 import './lib/assets/scss/globals.scss';
 import './lib/assets/scss/reset.scss';
 
@@ -14,7 +15,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>): JSX.Element {
+}>): ReactNode {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>

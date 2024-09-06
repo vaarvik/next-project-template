@@ -1,6 +1,6 @@
 import { SPACING_DIRECTIONS } from '@/constants';
 import { SpacingVariant } from '@/types/spacing';
-import { ElementType, HTMLAttributes } from 'react';
+import { ElementType, HTMLAttributes, ReactNode } from 'react';
 import styles from './ContentPadded.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
@@ -13,7 +13,7 @@ export default function ContentPadded({
   padding = 'md',
   children,
   ...otherProps
-}: Props): JSX.Element {
+}: Props): ReactNode {
   const classNames = [];
   if (typeof padding === 'string') {
     classNames.push(styles[`content-padded--${padding}`]);
