@@ -1,9 +1,9 @@
 'use client';
 
 import { MouseEvent, ReactNode, useEffect } from 'react';
-import styles from './Modal.module.scss';
 import CrossIcon from '../(icons)/CrossIcon/CrossIcon';
 import IconButton from '../IconButton/IconButton';
+import styles from './Modal.module.scss';
 
 interface Props {
   isOpen: boolean;
@@ -15,7 +15,7 @@ export default function Modal({
   isOpen,
   onClose,
   children,
-}: Props): ReactNode | null {
+}: Props): JSX.Element | null {
   useEffect(() => {
     const handleKeyDown = (event: globalThis.KeyboardEvent): void => {
       if (event.key === 'Escape') {
