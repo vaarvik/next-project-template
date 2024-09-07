@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
-
-export default function Home(): ReactNode {
+export default function Home(): JSX.Element {
   return (
     <main>
       <h1 role="heading">Home</h1>

@@ -1,6 +1,6 @@
 import { SPACING_DIRECTIONS } from '@/constants';
 import { SpacingVariant } from '@/types/spacing';
-import { ElementType, HTMLAttributes, ReactNode } from 'react';
+import { ElementType, HTMLAttributes } from 'react';
 import styles from './ContentMargined.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
@@ -13,7 +13,7 @@ export default function ContentMargined({
   margin = 'md',
   children,
   ...otherProps
-}: Props): ReactNode {
+}: Props): JSX.Element {
   const classNames = [];
 
   if (typeof margin === 'string') {

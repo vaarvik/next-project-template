@@ -1,4 +1,4 @@
-import { ElementType, HTMLAttributes, ReactNode } from 'react';
+import { ElementType, HTMLAttributes } from 'react';
 import styles from './Container.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
@@ -12,7 +12,7 @@ export default function Container({
   width = 'md',
   children,
   ...otherProps
-}: Props): ReactNode {
+}: Props): JSX.Element {
   const classNames = [styles['container']];
 
   if (width) classNames.push(styles[`container--${width}`]);
