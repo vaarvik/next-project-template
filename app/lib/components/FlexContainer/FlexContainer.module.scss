@@ -3,8 +3,14 @@
 .flex-container {
   display: flex;
 
-  &--fill-height {
+  &--fit-to-parent {
     height: 100%;
+    width: 100%;
+  }
+
+  &--fit-to-screen {
+    height: 100vh;
+    width: 100vw;
   }
 
   @each $size, $value in $space-sizes {

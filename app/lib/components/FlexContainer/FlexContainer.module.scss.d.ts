@@ -9,7 +9,8 @@ export type Styles = {
   'flex-container--direction-column-reverse': string;
   'flex-container--direction-row': string;
   'flex-container--direction-row-reverse': string;
-  'flex-container--fill-height': string;
+  'flex-container--fit-to-parent': string;
+  'flex-container--fit-to-screen': string;
   'flex-container--gap-lg': string;
   'flex-container--gap-md': string;
   'flex-container--gap-sm': string;

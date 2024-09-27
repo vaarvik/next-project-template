@@ -6,7 +6,8 @@ import styles from './FlexContainer.module.scss';
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
   direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  fillHeight?: boolean;
+  fitToParent?: boolean;
+  fitToScreen?: boolean;
   justify?:
     | 'flex-start'
     | 'flex-end'
@@ -22,7 +23,8 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
 export default function FlexContainer({
   as: HTMLTag = 'div',
   direction = 'row',
-  fillHeight = false,
+  fitToParent = false,
+  fitToScreen = false,
   justify,
   align,
   wrap = 'wrap',
@@ -38,7 +40,8 @@ export default function FlexContainer({
 
   if (align) classNames.push(styles[`flex-container--align-${align}`]);
   if (justify) classNames.push(styles[`flex-container--justify-${justify}`]);
-  if (fillHeight) classNames.push(styles[`flex-container--fill-height`]);
+  if (fitToParent) classNames.push(styles[`flex-container--fit-to-parent`]);
+  if (fitToScreen) classNames.push(styles[`flex-container--fit-to-screen`]);
 
   if (typeof gap === 'string') {
     classNames.push(styles[`flex-container--gap-${gap}`]);

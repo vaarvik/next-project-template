@@ -1,5 +1,6 @@
 export type Styles = {
   container: string;
+  'container--2xs': string;
   'container--full': string;
   'container--lg': string;
   'container--md': string;
