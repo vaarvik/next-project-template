@@ -3,12 +3,13 @@ import styles from './Container.module.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
-  viewportHeight?: boolean;
+  textAlign?: 'left' | 'center' | 'right';
   width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
 
 export default function Container({
   as: HTMLTag = 'div',
+  textAlign = 'left',
   width = 'md',
   children,
   ...otherProps
@@ -16,6 +17,7 @@ export default function Container({
   const classNames = [styles['container']];
 
   if (width) classNames.push(styles[`container--${width}`]);
+  if (textAlign) classNames.push(styles[`container--text-${textAlign}`]);
 
   return (
     <HTMLTag className={classNames.join(' ')} {...otherProps}>

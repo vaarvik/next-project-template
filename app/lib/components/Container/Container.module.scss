@@ -1,7 +1,8 @@
 @import 'app/lib/assets/scss/variables';
 
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: $content-width-md;
 
   @each $size, $value in $content-width-sizes {
@@ -12,5 +13,17 @@
 
   &--full {
     max-width: none;
+  }
+
+  &--text-center {
+    text-align: center;
+  }
+
+  &--text-left {
+    text-align: left;
+  }
+
+  &--text-right {
+    text-align: right;
   }
 }

@@ -5,6 +5,9 @@ export type Styles = {
   'container--lg': string;
   'container--md': string;
   'container--sm': string;
+  'container--text-center': string;
+  'container--text-left': string;
+  'container--text-right': string;
   'container--xl': string;
   'container--xs': string;
 };
