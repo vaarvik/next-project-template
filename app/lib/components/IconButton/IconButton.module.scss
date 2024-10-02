@@ -3,6 +3,7 @@
 .icon-button {
   &__content {
     align-items: center;
+    display: flex;
     gap: $space-sm;
     justify-content: space-between;
   }
