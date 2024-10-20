@@ -23,9 +23,9 @@
   },
   "scripts": {
     "build": "npm run lint && next build",
-    "check-types": "tsc --pretty",
-    "check-types:watch": "tsc --pretty --watch",
-    "dev": "npm-run-all --parallel next:dev tsm:watch check-types:watch",
+    "typecheck": "tsc --pretty",
+    "typecheck:watch": "tsc --pretty --watch",
+    "dev": "npm-run-all --parallel next:dev tsm:watch",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "husky:check": "bash .husky/pre-commit",
