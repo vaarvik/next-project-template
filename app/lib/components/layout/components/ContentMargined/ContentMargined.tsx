@@ -1,4 +1,4 @@
-import { SPACING_DIRECTIONS } from '@/constants';
+import { getSpacingClassNames } from '@/components/layout/services/utils/getSpacingClassNames';
 import { SpacingVariant } from '@/types/spacing';
 import { ElementType, HTMLAttributes } from 'react';
 import styles from './ContentMargined.module.scss';
@@ -14,20 +14,11 @@ export default function ContentMargined({
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [];
-
-  if (typeof margin === 'string') {
-    classNames.push(styles[`content-margined--${margin}`]);
-  } else {
-    SPACING_DIRECTIONS.forEach(direction => {
-      const spacingSize = margin[direction];
-      if (spacingSize) {
-        classNames.push(
-          styles[`content-margined--${direction}-${spacingSize}`],
-        );
-      }
-    });
-  }
+  const classNames = getSpacingClassNames(
+    margin,
+    styles,
+    'content-margined--margin',
+  );
 
   return (
     <HTMLTag className={classNames.join(' ')} {...otherProps}>

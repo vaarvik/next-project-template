@@ -10,14 +10,17 @@
 $color-foreground: #070707;
 $color-background: #fff;
 
+$colors-default: (
+  foreground: $color-foreground,
+  background: $color-background,
+);
+
 $color-primary: #7408e6;
 $color-secondary: #a45ee2;
 // $color-tertiary: #38b8e2;
 // $color-quaternary: #f7e1d1;
 
 $colors-brand: (
-  foreground: $color-foreground,
-  background: $color-background,
   primary: $color-primary,
   secondary: $color-secondary,
 );
@@ -50,6 +53,22 @@ $colors-status: (
 
 $colors-all: ();
 $colors-brand-status: ();
+
+@each $key, $value in $colors-default {
+  $colors-all: map-merge(
+    $colors-all,
+    (
+      $key: $value,
+    )
+  );
+
+  $colors-brand-status: map-merge(
+    $colors-brand-status,
+    (
+      $key: $value,
+    )
+  );
+}
 
 @each $key, $value in $colors-brand {
   $colors-all: map-merge(

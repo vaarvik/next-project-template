@@ -27,6 +27,7 @@ export type Styles = {
   'flex-item--basis-90': string;
   'flex-item--basis-95': string;
   'flex-item--basis-auto': string;
+  'flex-item--fill-content': string;
   'flex-item--grow-0': string;
   'flex-item--grow-1': string;
   'flex-item--grow-2': string;

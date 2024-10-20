@@ -5,6 +5,7 @@ interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
   order?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   grow?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+  fillContent?: boolean;
   shrink?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   basis?:
     | 'auto'
@@ -42,6 +43,7 @@ export default function FlexItem({
   as: HTMLTag = 'div',
   order,
   grow,
+  fillContent,
   shrink,
   basis,
   align,
@@ -50,6 +52,7 @@ export default function FlexItem({
 }: Props): JSX.Element {
   const classNames = [];
 
+  if (fillContent) classNames.push(styles['flex-item--fill-content']);
   if (order !== undefined) classNames.push(styles[`flex-item--order-${order}`]);
   if (grow !== undefined) classNames.push(styles[`flex-item--grow-${grow}`]);
   if (shrink !== undefined)

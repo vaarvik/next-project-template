@@ -4,7 +4,7 @@ import styles from './Container.module.scss';
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
   textAlign?: 'left' | 'center' | 'right';
-  width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  width?: '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 }
 
 export default function Container({
@@ -14,9 +14,8 @@ export default function Container({
   children,
   ...otherProps
 }: Props): JSX.Element {
-  const classNames = [styles['container']];
+  const classNames = [styles['container'], styles[`container--width-${width}`]];
 
-  if (width) classNames.push(styles[`container--${width}`]);
   if (textAlign) classNames.push(styles[`container--text-${textAlign}`]);
 
   return (

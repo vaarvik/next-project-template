@@ -10,6 +10,9 @@
 
   &--fit-to-screen {
     height: 100vh;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
     width: 100vw;
   }
 
@@ -18,11 +21,11 @@
       gap: $value;
     }
 
-    &--gap-x-#{$size} {
+    &--gap-y-#{$size} {
       row-gap: $value;
     }
 
-    &--gap-y-#{$size} {
+    &--gap-x-#{$size} {
       column-gap: $value;
     }
   }

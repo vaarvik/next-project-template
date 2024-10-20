@@ -29,6 +29,11 @@
     }
   }
 
+  &--fill-content {
+    height: 100%;
+    width: 100%;
+  }
+
   &--align-auto {
     align-self: auto;
   }

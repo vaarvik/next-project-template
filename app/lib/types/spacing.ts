@@ -11,3 +11,9 @@ export type SpacingDirectionsMapXY = Partial<
 >;
 
 export type SpacingVariantXY = SpacingSizes | SpacingDirectionsMapXY;
+
+export function isSpacingVariantXY(
+  spacing: SpacingVariant | SpacingVariantXY,
+): spacing is SpacingVariantXY {
+  return typeof spacing !== 'string' && 'x' in spacing && 'y' in spacing;
+}

@@ -1,7 +1,9 @@
-import { SPACING_DIRECTIONS_XY } from '@/constants';
+import { getSpacingClassNames } from '@/components/layout/services/utils/getSpacingClassNames';
 import { SpacingVariantXY } from '@/types/spacing';
 import { ElementType, HTMLAttributes } from 'react';
+import hasOnlyChildrenOfType from '../../services/utils/hasChildrenOfType';
 import styles from './FlexContainer.module.scss';
+import FlexItem from './components/FlexItem/FlexItem';
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'className'> {
   as?: ElementType;
@@ -32,29 +34,23 @@ export default function FlexContainer({
   children,
   ...otherProps
 }: Props): JSX.Element {
+  if (!hasOnlyChildrenOfType(children, FlexItem)) {
+    throw new Error(
+      `All direct children of ${FlexContainer.name} must be ${FlexItem.name}.`,
+    );
+  }
+
   const classNames = [
     styles['flex-container'],
     styles[`flex-container--direction-${direction}`],
     styles[`flex-container--wrap-${wrap}`],
+    ...getSpacingClassNames(gap, styles, 'flex-container--gap'),
   ];
 
   if (align) classNames.push(styles[`flex-container--align-${align}`]);
   if (justify) classNames.push(styles[`flex-container--justify-${justify}`]);
   if (fitToParent) classNames.push(styles[`flex-container--fit-to-parent`]);
   if (fitToScreen) classNames.push(styles[`flex-container--fit-to-screen`]);
-
-  if (typeof gap === 'string') {
-    classNames.push(styles[`flex-container--gap-${gap}`]);
-  } else if (gap) {
-    SPACING_DIRECTIONS_XY.forEach(direction => {
-      const spacingSize = gap[direction];
-      if (spacingSize) {
-        classNames.push(
-          styles[`flex-container--gap-${direction}-${spacingSize}`],
-        );
-      }
-    });
-  }
 
   return (
     <HTMLTag className={classNames.join(' ')} {...otherProps}>

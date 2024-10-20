@@ -1,4 +1,4 @@
-import { BrandColors, StatusColors } from '@/types/colors';
+import { BrandColors, DefaultColors, StatusColors } from '@/types/colors';
 import { FontSize } from '@/types/text';
 import { ElementType, HTMLAttributes } from 'react';
 import styles from './Button.module.scss';
@@ -6,7 +6,7 @@ import styles from './Button.module.scss';
 export interface ButtonProps
   extends Omit<HTMLAttributes<HTMLElement>, 'className' | 'color'> {
   as?: ElementType;
-  color?: BrandColors | StatusColors;
+  color?: DefaultColors | BrandColors | StatusColors;
   disabled?: boolean;
   rounded?: boolean;
   size?: FontSize;

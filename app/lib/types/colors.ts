@@ -1,4 +1,5 @@
-export type BrandColors = 'foreground' | 'background' | 'primary' | 'secondary';
+export type DefaultColors = 'foreground' | 'background';
+export type BrandColors = 'primary' | 'secondary';
 export type NeutralColors =
   | 'lightest'
   | 'lighter'
@@ -7,4 +8,8 @@ export type NeutralColors =
   | 'darkest';
 export type StatusColors = 'error' | 'warning' | 'success' | 'info';
 
-export type AllColors = BrandColors | StatusColors | NeutralColors;
+export type AllColors =
+  | DefaultColors
+  | BrandColors
+  | StatusColors
+  | NeutralColors;
